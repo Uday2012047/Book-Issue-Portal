@@ -30,7 +30,7 @@ function PatientProfile() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const fetchData = () => {
-    const url = `http://localhost:3000/api/getpatientprofile/?email=${emailt}`;
+    const url = `http://localhost:3000/api/getstudentprofile/?email=${emailt}`;
     return axios.get(url).then((response) => {
       setProfile(response.data);
       setDOB(response.data.DOB);
@@ -84,7 +84,7 @@ function PatientProfile() {
 
     const data = await response.json();
     const imageUrl = data.secure_url; // Get the uploaded image URL
-    const res = await fetch(`http://localhost:3000/api/updatepatientprofile/`, {
+    const res = await fetch(`http://localhost:3000/api/updatestudentprofile/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -230,11 +230,11 @@ function PatientProfile() {
               <div class="flex items-center">
                 <span className="font-semibold font-mono ml-2 text-lg  leading-tight text-blue-gray-500">
                   {" "}
-                  Blood Group:
+                  Your Department:
                 </span>
 
                 <input
-                  placeholder="Enter Blood Group"
+                  placeholder="Enter  Your Department:"
                   class="peer h-full flex-grow-0 flex-shrink-0 border-b border-blue-gray-200 bg-transparent pt-4 pl-4 ml-5 pb-1.5 font-sans text-md font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border-blue-gray-200  focus:border-pink-500 focus:outline-0 disabled:border-2 disabled:bg-blue-gray-50"
                   name="Dept"
                   type="text"
