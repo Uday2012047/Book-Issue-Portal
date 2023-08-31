@@ -21,7 +21,7 @@ function Doctorprofile() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   const fetchData = () => {
-    const url = `http://localhost:3000/api/getdoctorprofile/?email=${emailt}`;
+    const url = `http://localhost:3000/api/getlibrarianprofile/?email=${emailt}`;
     return axios.get(url).then((response) => {
       setProfile(response.data);
       setAge(response.data.age);
@@ -64,7 +64,7 @@ function Doctorprofile() {
 
     const data = await response.json();
     const imageUrl = data.secure_url; // Get the uploaded image URL
-    const res = await fetch(`http://localhost:3000/api/updatedoctorprofile/`, {
+    const res = await fetch(`http://localhost:3000/api/updatelibrarianprofile/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -324,7 +324,7 @@ function Doctorprofile() {
             >
               <a
                 href="http://localhost:3000/books">
-                Upload Prescription
+                Upload Book Issues
               </a>
 
 
