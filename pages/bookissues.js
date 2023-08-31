@@ -82,7 +82,7 @@ export default function prescription() {
       librarianName: session.user.name,
     };
 
-    const saveResponse = await fetch("/api/saveprescription", {
+    const saveResponse = await fetch("/api/savebookissues", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
