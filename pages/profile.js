@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSession, signOut, getSession } from "next-auth/react";
-import PatientProfile from "@/components/PatientProfile";
+import StudentProfile from "@/components/StudentProfile";
 import axios from "axios";
-import DoctorProfile from "@/components/DoctorProfile";
+import LaibrarianProfile from "@/components/LaibrarianProfile";
 
 function profile() {
   const { data: session } = useSession();
   return (
     <div>
-      {session.user.role === "student" && <PatientProfile />}
-      {session.user.role === "librarian" && <DoctorProfile />}
+      {session.user.role === "student" && <StudentProfile />}
+      {session.user.role === "librarian" && <LaibrarianProfile />}
 
     </div>
   );
